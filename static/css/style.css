@@ -8,3 +8,34 @@ body,
 html {
   height: 100%;
 }
+
+.legend i {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+}
+
+.legend .depth-0 {
+  background-color: #98EE00;
+}
+
+.legend .depth-1 {
+  background-color: #D4EE00;
+}
+
+.legend .depth-2 {
+  background-color: #EECC00;
+}
+
+.legend .depth-3 {
+  background-color: #EE9C00;
+}
+
+.legend .depth-4 {
+  background-color: #EA822C;
+}
+
+.legend .depth-5 {
+  background-color: #EA2C2C;
+}
