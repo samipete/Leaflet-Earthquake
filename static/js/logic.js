@@ -43,7 +43,7 @@ d3.json(url).then(function(data) {
     position: "bottomright"
   });
 
-  // add details the legend
+  // Add details to legend
   legend.onAdd = function () {
     let div = L.DomUtil.create("div", "info legend");
     div.style.backgroundColor = "#fff"; // add white background color
@@ -56,7 +56,8 @@ d3.json(url).then(function(data) {
       "#EA822C",
       "#EA2C2C"
     ];
-    // Looping through our intervals to generate a label with a colored square for each interval.
+    // Looping through our intervals to generate a label with a colored square for each interval
+    // Additional CSS was added to style.css to accomodate
     for (let i = 0; i < ranges.length; i++) {
       div.innerHTML += "<i style='background: " + colors[i] + "'></i> "
         + ranges[i] + (ranges[i + 1] ? "&ndash;" + ranges[i + 1] + "<br>" : "+");
@@ -64,7 +65,7 @@ d3.json(url).then(function(data) {
     return div;
   };
 
-  // add legend to the map.
+  // Add legend
   legend.addTo(myMap);
 
   // Function to get the color based on depth
@@ -76,7 +77,7 @@ d3.json(url).then(function(data) {
            depth < 90 ? "#EA822C" :
                          "#EA2C2C";
   }
-
+  // Function to get the radius of marker based on magnitude
   function getRadius(magnitude) {
     if (magnitude === 0) {
       return 1;
