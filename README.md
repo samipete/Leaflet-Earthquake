@@ -4,10 +4,10 @@ This project uses USGS GeoJSON data to visualize and map all recorded earthquake
 
 **About the map:**
 
-- Using Openstreetmap and Leaflet, a map was created with markers that plot all the earthquakes from the dataset based on longitude and latitude.
+- Using OpenStreetMap and Leaflet, a map was created with markers that plot all the earthquakes from the dataset based on longitude and latitude.
 - The size of the markers reflect magnitude(the larger the marker the higher the magnitude) and depth (earthquakes with greater depth are darker in color)
-- clickable pop-ups on markers provide information about the magnitude, depth, and location of the earthquake.
-- The legend displays ranges of depth and corresponding color.
+- Clickable pop-ups on markers provide information about the magnitude, depth, and location of the earthquake.
+- The legend displays ranges of depth (measured in km) and corresponding color.
 
 **Final result:**
 ![map](Images/deployedEQpage.png)

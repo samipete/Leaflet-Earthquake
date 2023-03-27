@@ -15,7 +15,7 @@ d3.json(url).then(function(data) {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(myMap);
 
-  // Loop through the earthquake data and add markers to the map
+  // Loop through the earthquake data
   data.features.forEach(function(feature) {
     // Get the latitude, longitude, magnitude, and depth of the earthquake
     var latitude = feature.geometry.coordinates[1];
@@ -23,7 +23,7 @@ d3.json(url).then(function(data) {
     var magnitude = feature.properties.mag;
     var depth = feature.geometry.coordinates[2];
 
-    // Create a marker function for the earthquakes
+    // Create the markers for the earthquakes; plot by lat, long and adjust size and color based on mag. and depth
     var marker = L.circleMarker([latitude, longitude], {
       radius: getRadius(magnitude),
       fillColor: getColor(depth),
@@ -38,7 +38,7 @@ d3.json(url).then(function(data) {
     marker.bindPopup(popupContent);
   });
 
-  // Create legend with depth colors
+  // Create and position legend 
   let legend = L.control({
     position: "bottomright"
   });
@@ -56,8 +56,8 @@ d3.json(url).then(function(data) {
       "#EA822C",
       "#EA2C2C"
     ];
-    // Looping through our intervals to generate a label with a colored square for each interval
-    // Additional CSS was added to style.css to accomodate
+    // Looping through our legend details to generate labels
+    // Additional CSS code was added to style.css to accomodate colorscale
     for (let i = 0; i < ranges.length; i++) {
       div.innerHTML += "<i style='background: " + colors[i] + "'></i> "
         + ranges[i] + (ranges[i + 1] ? "&ndash;" + ranges[i + 1] + "<br>" : "+");
@@ -65,7 +65,7 @@ d3.json(url).then(function(data) {
     return div;
   };
 
-  // Add legend
+  // Add legend to myMap
   legend.addTo(myMap);
 
   // Function to get the color based on depth
