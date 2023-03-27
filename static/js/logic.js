@@ -15,7 +15,7 @@ d3.json(url).then(function(data) {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(myMap);
 
-  // Loop through the earthquake data
+  // Loop through the earthquake data and features
   data.features.forEach(function(feature) {
     // Get the latitude, longitude, magnitude, and depth of the earthquake
     var latitude = feature.geometry.coordinates[1];
